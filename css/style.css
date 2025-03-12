@@ -1,0 +1,141 @@
+/* Create an accessible color palette using var()function */
+/* https://www.w3schools.com/css/css3_variables.asp */
+
+/* Import fonts (Atkinson Hyperlegible and Montserrat): */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  font-size: 12pt;
+
+  --tan: #cec6a4;
+  --primary: #93afa9;
+  --primary-dark: #1b2c34;
+  --dark: #090e17;
+  --gray: #ccc;
+  --white: #fff;
+  --orange: #ec7021;
+}
+
+* {
+  font-family: "Montserrat";
+  font-size: 1rem;
+}
+
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background-color: var(--primary);
+  border: 2px solid var(--primary-dark);
+  border-radius: 20px;
+  color: var(--dark);
+  padding: 20px;
+}
+.skip:focus {
+  top: 20px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--tan);
+}
+
+main {
+  display: flex;
+  padding: 25px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid var(--primary-dark);
+  border-radius: 16px;
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--dark);
+  background: var(--primary);
+  gap: 20px;
+}
+
+.radio {
+  display: grid;
+  grid-template-columns: 200px 20px 1fr;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background: var(--primary-dark);
+  color: var(--gray);
+  padding: 20px;
+  border-radius: 16px;
+  gap: 25px;
+}
+
+.radio p {
+  grid-column: 1 / span 2;
+}
+
+.radio label {
+  grid-column: 1 / span 1;
+}
+
+.radio input {
+  grid-column: 2 / span 1;
+}
+
+#name {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--gray);
+  color: var(--dark);
+  border: none;
+  border-radius: 16px;
+}
+
+#message {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+}
+
+input,
+textarea {
+  padding: 10px;
+  background-color: var(--gray);
+  border: none;
+  border-radius: 16px;
+  width: 100%;
+}
+
+button[type="reset"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--orange);
+  color: var(--dark);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="reset"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--orange);
+}
+
+.group {
+  display: flex;
+  gap: 20px;
+}
